@@ -1,0 +1,45 @@
+version: '2'
+volumes:
+        web_data:
+                external:
+                        name: new
+services:
+  jenkins:
+          image: jenkinsci/blueocean
+          ports:
+                  - "8080:8080"
+          volumes:
+                  - web_data
+  java:
+          image: akawasthi0303/java:5
+          command: tail -f /dev/null
+                   
+  git:
+          image: akawasthi0303/git:3.0
+          command: tail -f /dev/null
+          
+         
+  buildessen:
+          image: akawasthi0303/buildessen:1.0
+          command: tail -f /dev/null
+          
+         
+  maven:
+          image: akawasthi0303/maven:3.6
+          command: tail -f /dev/null
+          
+         
+  vim:
+          image: akawasthi0303/vim:2.0
+          command: tail -f /dev/null
+
+  eclipse:
+          image: akawasthi0303/eclipse
+          command: tail -f /dev/null        
+         
+  selinium:
+          image: akawasthi0303/selinium:4.0
+          command: tail -f /dev/nul
+  
+ 
+
